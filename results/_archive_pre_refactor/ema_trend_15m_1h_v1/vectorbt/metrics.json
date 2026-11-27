@@ -1,0 +1,10 @@
+{
+  "strategy_id": "ema_trend_15m_1h_v1",
+  "final_equity": 8164.216798,
+  "net_return": -0.18357832,
+  "max_drawdown": -0.43303281,
+  "trades": 319,
+  "win_rate": 0.23824451,
+  "profit_factor": 0.89890145,
+  "engine_assumptions": "VectorBT from_signals; causal higher-timeframe bias; next-bar-open price series; fee and slippage per side"
+}

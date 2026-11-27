@@ -1,0 +1,22 @@
+{
+  "project": "BTC-USDT Strategy Lab",
+  "instrument": "BTC-USDT-SWAP",
+  "exchange": "OKX",
+  "cached_timeframes": [
+    "5m",
+    "15m",
+    "1H"
+  ],
+  "engines": [
+    "quant_lab",
+    "vectorbt"
+  ],
+  "strategies": [
+    "strategies/ema_trend_15m_1h.yaml"
+  ],
+  "data_is_local": true,
+  "live_trading": false,
+  "version": "2.0.0",
+  "tests": "tests/ (pytest)",
+  "notes": "Shared execution plan consumed by both engines; see AUDIT.md"
+}

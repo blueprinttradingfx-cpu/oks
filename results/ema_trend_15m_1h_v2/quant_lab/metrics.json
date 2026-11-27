@@ -1,0 +1,40 @@
+{
+  "strategy_id": "ema_trend_15m_1h_v2",
+  "start": "2026-01-01T00:00:00+00:00",
+  "end": "2026-11-27T00:15:00+00:00",
+  "bars": 31681,
+  "initial_equity": 10000.0,
+  "final_equity": 8178.536773,
+  "net_return": -0.18214632,
+  "max_drawdown": -0.43238151,
+  "sharpe": -0.49086098,
+  "buy_and_hold_return": -0.30910118,
+  "trades": 319,
+  "win_rate": 0.23824451,
+  "profit_factor": 0.89973548,
+  "avg_trade_return": -0.00040773,
+  "avg_bars_held": 52.18,
+  "exposure": 0.52539377,
+  "total_fees": 2899.988474,
+  "total_funding": 19.256975,
+  "funding_mode": "cached_when_available",
+  "funding_coverage": 0.28052472,
+  "in_sample": {
+    "bars": 22177,
+    "net_return": -0.18834123,
+    "max_drawdown": -0.4179878,
+    "sharpe": -0.79629702,
+    "buy_and_hold_return": -0.20604729
+  },
+  "out_of_sample": {
+    "bars": 9504,
+    "net_return": 0.00763241,
+    "max_drawdown": -0.20984637,
+    "sharpe": 0.24940796,
+    "buy_and_hold_return": -0.12979853
+  },
+  "engine_assumptions": "next-bar-open fills; fee+slippage per side on fill notional; marked-to-market equity; fixed notional per trade; open position closed at last close",
+  "engine": "quant_lab",
+  "funding_modeled": true,
+  "config_sha256": "7faa1671ece7dfa3832d2f137920f488ff83175814355bfdbabb73eac94dd778"
+}

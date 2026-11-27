@@ -1,0 +1,10 @@
+{
+  "strategy_id": "ema_trend_15m_1h_v1",
+  "final_equity": 6196.545063,
+  "net_return": -0.38034549,
+  "max_drawdown": -0.54514024,
+  "trades": 501,
+  "win_rate": 0.27944112,
+  "profit_factor": 0.82932963,
+  "engine_assumptions": "causal higher-timeframe bias; next-bar-open fills; fee and slippage per side"
+}

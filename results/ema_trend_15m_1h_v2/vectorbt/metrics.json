@@ -1,0 +1,40 @@
+{
+  "strategy_id": "ema_trend_15m_1h_v2",
+  "start": "2026-01-01T00:00:00+00:00",
+  "end": "2026-11-27T00:15:00+00:00",
+  "bars": 31681,
+  "initial_equity": 10000.0,
+  "final_equity": 8158.490338,
+  "net_return": -0.18415097,
+  "max_drawdown": -0.43303281,
+  "sharpe": -0.4993116,
+  "buy_and_hold_return": -0.30910118,
+  "trades": 319,
+  "win_rate": 0.23824451,
+  "profit_factor": 0.89861806,
+  "avg_trade_return": -0.0004159,
+  "avg_bars_held": 52.18,
+  "exposure": 0.52539377,
+  "total_fees": 2898.57887,
+  "total_funding": 0.0,
+  "funding_mode": "not_modeled",
+  "funding_coverage": null,
+  "in_sample": {
+    "bars": 22177,
+    "net_return": -0.18824005,
+    "max_drawdown": -0.41782616,
+    "sharpe": -0.79627329,
+    "buy_and_hold_return": -0.20604729
+  },
+  "out_of_sample": {
+    "bars": 9504,
+    "net_return": 0.00503731,
+    "max_drawdown": -0.2108956,
+    "sharpe": 0.22039416,
+    "buy_and_hold_return": -0.12979853
+  },
+  "engine_assumptions": "VectorBT from_signals replaying the shared execution plan; funding not modeled",
+  "engine": "vectorbt",
+  "funding_modeled": false,
+  "config_sha256": "7faa1671ece7dfa3832d2f137920f488ff83175814355bfdbabb73eac94dd778"
+}

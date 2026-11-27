@@ -1,0 +1,79 @@
+{
+  "source": "OKX public REST API",
+  "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+  "instrument": "BTC-USDT-SWAP",
+  "market_type": "USDT-margined perpetual swap",
+  "requested_period_start_utc": "2026-01-01T00:00:00Z",
+  "retrieval_time_utc": "2026-11-27T04:04:20.562858Z",
+  "latest_candle_policy": "latest completed candle only; confirm=1; current forming candle excluded",
+  "raw_fields": [
+    "ts",
+    "o",
+    "h",
+    "l",
+    "c",
+    "vol",
+    "volCcy",
+    "volCcyQuote",
+    "confirm"
+  ],
+  "notes": [
+    "Timestamps are candle start times in UTC.",
+    "OKX swap volume fields are retained as returned; vol is contracts, volCcy is base-asset volume, and volCcyQuote is quote volume.",
+    "This cache contains venue candles only; funding rates, fees, spread, slippage, and open interest are not included yet and must be modeled or separately cached for the backtest."
+  ],
+  "files": [
+    {
+      "bar": "5m",
+      "file": "data/BTC-USDT-SWAP_5m_2026.csv.gz",
+      "rows": 95088,
+      "first_timestamp_utc": "2026-01-01T00:00:00Z",
+      "last_timestamp_utc": "2026-11-27T03:55:00Z",
+      "expected_interval_ms": 300000,
+      "gaps_count": 0,
+      "gaps_sample": [],
+      "bad_ohlc_count": 0,
+      "unique_timestamps": 95088,
+      "pages": 951,
+      "request_url_example": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=5m&limit=100"
+    },
+    {
+      "bar": "15m",
+      "file": "data/BTC-USDT-SWAP_15m_2026.csv.gz",
+      "rows": 31696,
+      "first_timestamp_utc": "2026-01-01T00:00:00Z",
+      "last_timestamp_utc": "2026-11-27T03:45:00Z",
+      "expected_interval_ms": 900000,
+      "gaps_count": 0,
+      "gaps_sample": [],
+      "bad_ohlc_count": 0,
+      "unique_timestamps": 31696,
+      "pages": 317,
+      "request_url_example": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=15m&limit=100"
+    },
+    {
+      "bar": "1H",
+      "file": "data/BTC-USDT-SWAP_1H_2026.csv.gz",
+      "rows": 7924,
+      "first_timestamp_utc": "2026-01-01T00:00:00Z",
+      "last_timestamp_utc": "2026-11-27T03:00:00Z",
+      "expected_interval_ms": 3600000,
+      "gaps_count": 0,
+      "gaps_sample": [],
+      "bad_ohlc_count": 0,
+      "unique_timestamps": 7924,
+      "pages": 80,
+      "request_url_example": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=100"
+    }
+  ],
+  "funding_rate_cache": {
+    "file": "data/BTC-USDT-SWAP_funding_2026.csv.gz",
+    "rows": 278,
+    "first_timestamp_utc": "2026-08-26T16:00:00Z",
+    "last_timestamp_utc": "2026-11-27T00:00:00Z",
+    "pages": 4,
+    "endpoint": "https://www.okx.com/api/v5/public/funding-rate-history",
+    "request_url_example": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=100",
+    "notes": "Funding rates are recorded at fundingTime; apply only when a simulated position is open at that timestamp, using the appropriate contract notional convention."
+  }
+}

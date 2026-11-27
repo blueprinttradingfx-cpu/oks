@@ -1,0 +1,46 @@
+strategy_id: ema_trend_15m_1h_v2
+name: 15m EMA trend with 1h bias
+
+data:
+  instrument: BTC-USDT-SWAP
+  timeframe: 15m
+  higher_timeframe: 1H
+  start: 2026-01-01T00:00:00Z
+  end: 2026-11-27T00:00:00Z
+
+signals:
+  type: ema_trend
+  fast_ema: 20
+  slow_ema: 50
+  higher_timeframe:
+    fast_ema: 50
+    slow_ema: 200
+    require_alignment: true      # false = trade the 15m trend regardless of the 1h bias
+
+execution:
+  signal_execution: next_bar_open
+  position_mode: long_short      # long_short | long_only | short_only
+  leverage: 1                    # sizing multiplier only; liquidation prices are not modelled
+  pyramiding: false
+  # Exit one bar before each funding settlement and re-enter after it. OFF by default: it adds up to three
+  # round trips per day (~14 bp each at the default costs) to avoid funding of ~0.5 bp per 8h.
+  flat_before_funding:
+    enabled: false
+    bars_before: 1
+    funding_hours_utc: [0, 8, 16]
+
+risk:
+  position_sizing: equity_fraction
+  equity_fraction: 1.0
+  initial_equity: 10000.0
+
+costs:
+  fee_per_side: 0.0005
+  slippage_per_side: 0.0002
+  funding:
+    mode: cached_when_available  # none | cached_when_available | cached_with_fallback
+    fallback_rate_per_8h: 0.0    # only used by cached_with_fallback
+
+validation:
+  data_source: local_okx_cache
+  out_of_sample_fraction: 0.30   # reported as in_sample / out_of_sample blocks in metrics.json
